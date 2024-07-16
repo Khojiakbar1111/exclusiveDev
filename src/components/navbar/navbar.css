@@ -1,0 +1,145 @@
+nav {
+  width: 100%;
+  padding: 47px 135px 16px;
+  /* background: rgb(215, 214, 214); */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_links {
+  display: flex;
+  gap: 48px;
+}
+
+nav .nav_logo {
+  font-size: 24px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav_links {
+  display: flex;
+  gap: 48px;
+}
+
+.nav_links li {
+  text-decoration: none;
+  list-style-type: none;
+  transition: all ease 0.2s;
+}
+
+.nav_links li a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* .nav_links li:hover {
+  transform: translateY(-4px);
+} */
+
+.nav_btn {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav_search {
+  width: 243px;
+  height: 38px;
+  background: #f5f5f5;
+  padding: 0 12px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_search input {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  outline: none;
+}
+
+.nav_search i {
+  cursor: pointer;
+}
+
+.nav_btn a > i {
+  font-size: 20px;
+  color: black;
+}
+
+.nav_links li a.active {
+  border-bottom: 2px solid black;
+}
+
+.mobile_btn {
+  width: 22px;
+  height: 22px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+.close-menu,
+.mobile_btn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    z-index: 10;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: all 0.5s linear;
+  }
+
+  .nav_links.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .nav_links li a {
+    color: white;
+  }
+
+  .nav_btn {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .close-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile_btn{
+    display: block;
+  }
+}
