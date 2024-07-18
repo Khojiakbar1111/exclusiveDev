@@ -5,3 +5,11 @@
   text-decoration: none;
   font-family: sans-serif;
 }
+
+button{
+  cursor: pointer;
+}
+
+/* .App{
+  overflow: hidden;
+} */

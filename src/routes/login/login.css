@@ -1,0 +1,65 @@
+.login {
+  border: 1px solid #e3e3e3;
+  padding: 60px 135px 140px 0;
+  display: flex;
+  gap: 129px;
+}
+
+.login-right {
+  margin-top: 227px;
+}
+
+.login-right h1 {
+  font-size: 36px;
+  margin-bottom: 26px;
+}
+
+.login-right span {
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.login-right form input {
+  outline-color: none;
+  border: none;
+  border-bottom: 2px solid #e3e3e3;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+.login-right form input:focus {
+  outline: none;
+}
+
+.login-right form input:nth-child(2) {
+  padding: 40px 0 10px;
+  font-size: 16px;
+}
+
+.sign-btns {
+  display: flex;
+  gap: 97px;
+  margin-top: 40px;
+}
+
+.login-right form .login-login {
+  padding: 16px 48px;
+  background: #db4444;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.login-right form .login-forgot {
+  font-size: 16px;
+  color: #db4444;
+  border: none;
+  background: transparent;
+}

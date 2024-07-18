@@ -26,7 +26,9 @@ const Navbar = () => {
         Exclusive
       </Link>
       <ul className={isMobile ? "nav_links active" : "nav_links"}>
-        <button className="close-menu" onClick={handleMobileBtnClick}><i className="fa-solid fa-xmark"></i></button>
+        <button className="close-menu" onClick={handleMobileBtnClick}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
         <li>
           <Link
             to="/"
@@ -69,14 +71,22 @@ const Navbar = () => {
           <input type="text" placeholder="What are you looking for?" />
           <i className="fa-solid fa-magnifying-glass"></i>
         </div>
-        <Link>
-          <i className="fa-regular fa-heart"></i>
-        </Link>
-        <Link>
-          <i className="fa-solid fa-cart-shopping"></i>
-        </Link>
+
+        {location.pathname === "/signup" || (
+          <Link>
+            <i className="fa-regular fa-heart"></i>
+          </Link>
+        )}
+        {location.pathname === "/signup" || (
+          <Link>
+            <i className="fa-solid fa-cart-shopping"></i>
+          </Link>
+        )}
+
         <button className="mobile_btn" onClick={handleMobileBtnClick}>
-          <i className={isMobile ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
+          <i
+            className={isMobile ? "fa-solid fa-xmark" : "fa-solid fa-bars"}
+          ></i>
         </button>
       </div>
     </nav>

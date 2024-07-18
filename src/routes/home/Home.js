@@ -13,13 +13,13 @@ const Home = () => {
   return (
     <div>
       <HomeCategory/>
-      {/* <FlashSales />
-      <Categories />
-      <BestSelling />
-      <Recommend />
-      <OurProducts />
-      <Featured />
-      <Service /> */}
+      <FlashSales />
+      {/* <Categories /> */}
+      {/* <BestSelling /> */}
+      {/* <Recommend /> */}
+      {/* <OurProducts /> */}
+      {/* <Featured /> */}
+      {/* <Service /> */}
     </div>
   )
 }

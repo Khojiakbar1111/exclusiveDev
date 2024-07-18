@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "discount": 40,
+      "image": "../assets/flashSales/gamepad.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "discountPrice": 120,
+      "price": 160
+    },
+
+    {
+      "id": 2,
+      "discount": 35,
+      "image": "../assets/flashSales/keyboard.png",
+      "name": "AK-900 Wired Keyboard",
+      "discountPrice": 960,
+      "price": 1160
+    },
+
+    {
+      "id": 3,
+      "discount": 30,
+      "image": "../assets/flashSales/TV.png",
+      "name": "IPS LCD Gaming Monitor",
+      "discountPrice": 370,
+      "price": 400
+    },
+
+    {
+      "id": 4,
+      "discount": 40,
+      "image": "../assets/flashSales/chair.png",
+      "name": "S-Series Comfort Chair ",
+      "discountPrice": 375,
+      "price": 400
+    },
+
+    {
+      "id": 5,
+      "discount": 40,
+      "image": "../assets/flashSales/chair.png",
+      "name": "HAVIT HV-G92 Gamepad",
+      "discountPrice": 120,
+      "price": 160
+    }
+  ]
+}
