@@ -2,7 +2,7 @@
   border: 1px solid #e3e3e3;
   padding: 60px 135px 140px 0;
   display: flex;
-  gap: 129px;
+  gap: 119px;
 }
 
 .signup-right {
@@ -51,7 +51,7 @@
 }
 
 .signup-right form .signup-login {
-  padding: 16px 122px;
+  padding: 16px 100px;
   background: #db4444;
   border: none;
   color: white;
@@ -60,7 +60,7 @@
 }
 
 .signup-right form .signup-forgot {
-  padding: 16px 122px;
+  padding: 16px 70px;
   font-size: 16px;
   color: black;
   border: 2px solid #e3e3e3;

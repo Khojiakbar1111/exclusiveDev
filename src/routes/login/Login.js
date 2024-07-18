@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import contactImg from "../../components/assets/signup/contactImg.png";
 
 const Login = () => {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  console.log(users);
+
   return (
     <div className="login">
       <div className="login-left">
@@ -14,7 +17,7 @@ const Login = () => {
         <form>
           <input type="text" placeholder="Email or Phone Number" />
           <input type="password" placeholder="Password" />
-          <div className="sign-btns">
+          <div className="login-btns">
             <button className="login-login">Log in</button>
             <button className="login-forgot">Forgot Password?</button>
           </div>

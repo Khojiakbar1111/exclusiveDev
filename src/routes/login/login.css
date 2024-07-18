@@ -42,9 +42,9 @@
   font-size: 16px;
 }
 
-.sign-btns {
+.login-btns {
   display: flex;
-  gap: 97px;
+  gap: 87px;
   margin-top: 40px;
 }
 

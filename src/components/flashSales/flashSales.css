@@ -1,6 +1,7 @@
 .flashSales {
-  margin: 140px 135px;
+  margin: 140px 135px 0;
   overflow: hidden;
+  border-bottom: 1px solid #afafaf;
 }
 
 .flashSales-category {

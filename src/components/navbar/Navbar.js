@@ -72,12 +72,12 @@ const Navbar = () => {
           <i className="fa-solid fa-magnifying-glass"></i>
         </div>
 
-        {location.pathname === "/signup" || (
+        {location.pathname === "/signup" || location.pathname === "/login" || (
           <Link>
             <i className="fa-regular fa-heart"></i>
           </Link>
         )}
-        {location.pathname === "/signup" || (
+        {location.pathname === "/signup" || location.pathname === "/login" || (
           <Link>
             <i className="fa-solid fa-cart-shopping"></i>
           </Link>
