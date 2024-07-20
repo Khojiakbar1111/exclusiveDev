@@ -3,7 +3,7 @@ import "./login.css";
 import contactImg from "../../components/assets/signup/contactImg.png";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setUserAcc }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,14 +12,19 @@ const Login = () => {
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
   const validateUser = () => {
-    const user = users.filter(
-      (item) => item.firstName === email && item.password === password
-    );
-    if (user) {
-      navigate("/");
-      alert("Account successful registered");
+    if (email !== "" && password !== "") {
+      const user = users.find(
+        (item) => item.phoneNumber === email && item.password === password
+      );
+      if (user) {
+        navigate("/");
+        alert("Account successful registered");
+        setUserAcc(true);
+      } else {
+        alert("Error");
+      }
     } else {
-      alert("Error");
+      alert("Please fill all fields");
     }
   };
 

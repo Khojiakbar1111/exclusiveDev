@@ -63,3 +63,12 @@
   border: none;
   background: transparent;
 }
+
+.user-acc {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #db4444;
+  color: white;
+  border-radius: 50%;
+}

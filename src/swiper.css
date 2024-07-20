@@ -6,3 +6,20 @@
 .swiper-pagination-bullet {
   background-color: white;
 }
+
+.aboutSwiper {
+  width: 100%;
+  height: 650px;
+  color: white;
+  margin-bottom: 300px;
+}
+
+.aboutSwiper .swiper-pagination-bullet {
+  background-color: #484646;
+  width: 12px;
+  height: 12px;
+}
+
+.aboutSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #db4444;
+}

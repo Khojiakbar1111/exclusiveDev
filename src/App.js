@@ -16,6 +16,10 @@ function App() {
     JSON.parse(localStorage.getItem("users")) || []
   );
 
+  const [userAcc, setUserAcc] = useState(false);
+
+  console.log(userAcc);
+
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
@@ -27,10 +31,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Navbar />
+      <Navbar userAcc={userAcc} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setUserAcc={setUserAcc} />} />
         <Route
           path="/signup"
           element={

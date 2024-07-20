@@ -1,0 +1,25 @@
+.ourStory {
+  width: 100%;
+  display: flex;
+  gap: 75px;
+  border-top: 2px solid #d9d9d9;
+  padding: 143px 0px 0 135px;
+}
+
+.our-story-left {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 144px 0px 0px;
+}
+
+.our-story-left h1 {
+  font-size: 54px;
+  margin-bottom: 10px;
+}
+
+.our-story-left p {
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}

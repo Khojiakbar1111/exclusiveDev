@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { Link, useLocation } from "react-router-dom";
+import { FaUser } from "react-icons/fa6";
 
-const Navbar = () => {
+const Navbar = ({ userAcc }) => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
   const [isMobile, setIsMobile] = useState(false);
@@ -88,6 +89,11 @@ const Navbar = () => {
             className={isMobile ? "fa-solid fa-xmark" : "fa-solid fa-bars"}
           ></i>
         </button>
+        {userAcc && (
+          <button className="user-acc">
+            <FaUser />
+          </button>
+        )}
       </div>
     </nav>
   );

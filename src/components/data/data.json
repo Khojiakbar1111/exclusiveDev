@@ -34,15 +34,6 @@
       "name": "S-Series Comfort Chair ",
       "discountPrice": 375,
       "price": 400
-    },
-
-    {
-      "id": 5,
-      "discount": 40,
-      "image": "../assets/flashSales/chair.png",
-      "name": "HAVIT HV-G92 Gamepad",
-      "discountPrice": 120,
-      "price": 160
     }
   ]
 }

@@ -1,43 +1,38 @@
-
-
 .statistics {
-    display: flex;
-    padding: 50px 8%;
-    gap: 20px;
-    text-align: center;
+  display: flex;
+  padding: 140px 8%;
+  gap: 20px;
+  text-align: center;
 }
 
 .statistics-card {
-    width: 50%;
-    height: 230px;
-    border:  2px solid #867b7b;
-    border-radius: 5px;
-    transition: all 0.6s;
+  width: 50%;
+  height: 230px;
+  border: 2px solid #867b7b;
+  border-radius: 5px;
+  transition: all 0.6s;
 }
 
 .statistics-card:hover {
-    background: #DB4444;
-    color: white;
+  background: #db4444;
+  color: white;
+  border: 2px solid white;
 }
 
 .statistics-img {
-    margin-top: 30px;
+  margin-top: 30px;
 }
-
-
 
 .statistics-text,
 .statistics-hover {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .statistics-text h1 {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .statistics-text p {
-    margin-top: 10px;
-    font-size: 18px;
-
+  margin-top: 10px;
+  font-size: 18px;
 }
-
