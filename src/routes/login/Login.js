@@ -11,6 +11,11 @@ const Login = ({ setUserAcc }) => {
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
+  const resetInputs = () => {
+    setEmail("");
+    setPassword("");
+  };
+
   const validateUser = () => {
     if (email !== "" && password !== "") {
       const user = users.find(
@@ -21,7 +26,8 @@ const Login = ({ setUserAcc }) => {
         alert("Account successful registered");
         setUserAcc(true);
       } else {
-        alert("Error");
+        alert("User is not defined");
+        resetInputs();
       }
     } else {
       alert("Please fill all fields");

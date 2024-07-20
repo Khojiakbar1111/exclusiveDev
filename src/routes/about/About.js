@@ -3,6 +3,7 @@ import "./about.css";
 import OurStory from "../../components/ourStory/OurStory";
 import Statistics from "../../components/statistics/Statistics";
 import Teammates from "../../components/teammates/Teammates";
+import Service from "../../components/service/Service";
 
 const About = () => {
   return (
@@ -10,6 +11,7 @@ const About = () => {
       <OurStory />
       <Statistics />
       <Teammates />
+      <Service />
     </div>
   );
 };

@@ -1,0 +1,22 @@
+.service {
+  width: 100%;
+  padding: 140px 268px;
+  display: flex;
+  gap: 85px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-top: 14px;
+}
+
+.service-card span {
+  font-size: 14px;
+}

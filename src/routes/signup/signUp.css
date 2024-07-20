@@ -70,3 +70,16 @@
   gap: 16px;
   border-radius: 5px;
 }
+
+.sign-btns span {
+  font-size: 16px;
+  color: #4d4d4d;
+  display: flex;
+  gap: 10px;
+  margin: 14px 40px;
+}
+
+.sign-btns span a {
+  color: #4d4d4d;
+  border-bottom: 2px solid #4d4d4d;
+}

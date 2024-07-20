@@ -43,7 +43,115 @@ const Teammates = () => {
 
   return (
     <>
-      <Swiper modules={[Pagination]} pagination={true} className="aboutSwiper">
+      <Swiper
+        modules={[Pagination]}
+        pagination={{ dynamicBullets: true }}
+        className="aboutSwiper"
+      >
+        <SwiperSlide>
+          <div className="our-temmate">
+            {ourTemmate.map((temmate) => {
+              return (
+                <div className="temmate-cart" key={temmate.id}>
+                  <div className="temmate-img">
+                    <img src={temmate.image} alt="" />
+                  </div>
+                  <h1>{temmate.firstName}</h1>
+                  <p>{temmate.job}</p>
+                  <div className="temmate-icon">
+                    <Link to="/twitter">
+                      <CiTwitter />
+                    </Link>
+                    <Link to="/instagram">
+                      <FaInstagram />
+                    </Link>
+                    <Link to="/linkedin">
+                      <FaLinkedinIn />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="our-temmate">
+            {ourTemmate.map((temmate) => {
+              return (
+                <div className="temmate-cart" key={temmate.id}>
+                  <div className="temmate-img">
+                    <img src={temmate.image} alt="" />
+                  </div>
+                  <h1>{temmate.firstName}</h1>
+                  <p>{temmate.job}</p>
+                  <div className="temmate-icon">
+                    <Link to="/twitter">
+                      <CiTwitter />
+                    </Link>
+                    <Link to="/instagram">
+                      <FaInstagram />
+                    </Link>
+                    <Link to="/linkedin">
+                      <FaLinkedinIn />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="our-temmate">
+            {ourTemmate.map((temmate) => {
+              return (
+                <div className="temmate-cart" key={temmate.id}>
+                  <div className="temmate-img">
+                    <img src={temmate.image} alt="" />
+                  </div>
+                  <h1>{temmate.firstName}</h1>
+                  <p>{temmate.job}</p>
+                  <div className="temmate-icon">
+                    <Link to="/twitter">
+                      <CiTwitter />
+                    </Link>
+                    <Link to="/instagram">
+                      <FaInstagram />
+                    </Link>
+                    <Link to="/linkedin">
+                      <FaLinkedinIn />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="our-temmate">
+            {ourTemmate.map((temmate) => {
+              return (
+                <div className="temmate-cart" key={temmate.id}>
+                  <div className="temmate-img">
+                    <img src={temmate.image} alt="" />
+                  </div>
+                  <h1>{temmate.firstName}</h1>
+                  <p>{temmate.job}</p>
+                  <div className="temmate-icon">
+                    <Link to="/twitter">
+                      <CiTwitter />
+                    </Link>
+                    <Link to="/instagram">
+                      <FaInstagram />
+                    </Link>
+                    <Link to="/linkedin">
+                      <FaLinkedinIn />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </SwiperSlide>
         <SwiperSlide>
           <div className="our-temmate">
             {ourTemmate.map((temmate) => {

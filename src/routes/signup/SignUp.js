@@ -3,7 +3,7 @@ import "./signUp.css";
 import contactImg from "../../components/assets/signup/contactImg.png";
 import contactIconImg from "../../components/assets/signup/Icon-Google.png";
 import { v4 as uuidv4 } from "uuid";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = ({ addUsers }) => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const SignUp = ({ addUsers }) => {
       addUsers(newUser);
       alert("User has been registered");
       formRef.current.reset();
-      navigate("/login"); 
+      navigate("/login");
     } else {
       alert("Please fill all fields");
     }
@@ -60,6 +60,9 @@ const SignUp = ({ addUsers }) => {
             <button className="signup-forgot" type="button">
               <img src={contactIconImg} alt="Google" /> Sign with Google
             </button>
+            <span>
+              Already have account? <Link to="/login">Log in</Link>
+            </span>
           </div>
         </form>
       </div>
