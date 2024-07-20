@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./signUp.css";
 import contactImg from "../../components/assets/signup/contactImg.png";
 import contactIconImg from "../../components/assets/signup/Icon-Google.png";
 import { v4 as uuidv4 } from "uuid";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const SignUp = ({ users, addUsers }) => {
-  const location = useNavigate();
+const SignUp = ({ addUsers }) => {
+  const navigate = useNavigate();
 
   const firstNameRef = useRef();
   const phoneNumberRef = useRef();
@@ -27,10 +27,11 @@ const SignUp = ({ users, addUsers }) => {
         phoneNumber,
         password,
       };
-      location("/login");
+
       addUsers(newUser);
       alert("User has been registered");
       formRef.current.reset();
+      navigate("/login"); 
     } else {
       alert("Please fill all fields");
     }

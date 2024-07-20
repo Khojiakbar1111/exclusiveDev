@@ -21,12 +21,7 @@ function App() {
   }, [users]);
 
   const addUsers = (user) => {
-    setUsers((prev) => {
-      return {
-        ...prev,
-        user,
-      };
-    });
+    setUsers((prev) => [...prev, user]);
   };
 
   return (
