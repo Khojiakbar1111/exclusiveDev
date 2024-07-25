@@ -96,7 +96,6 @@
 }
 
 .flashSales-cart {
-  position: relative;
   width: 270px;
   height: 350px;
   display: flex;
@@ -104,15 +103,11 @@
 }
 
 .flashSales-overlay {
+  position: relative;
   width: 100%;
   height: 250px;
   background: linear-gradient(to bottom, #f5f5f5 250px, white 250px);
   overflow: hidden;
-  transition: all ease 0.3s;
-}
-
-.flashSales-overlay:hover .addToCart {
-  margin-top: 94px;
 }
 
 .flashSales-icons {
@@ -133,19 +128,18 @@
   justify-content: center;
 }
 
+.cart-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .flash-btns {
+  position: absolute;
+  right: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 10;
-}
-
-.cart-img {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 49px;
-  left: 39px;
 }
 
 .flash-btns button {
@@ -164,7 +158,8 @@
   color: white;
 }
 
-.flashSales-overlay > button {
+.flashSales-overlay .addToCart {
+  position: absolute;
   width: 100%;
   padding: 20px 85px;
   background: black;
@@ -172,7 +167,13 @@
   color: white;
   font-size: 16px;
   margin-top: 58%;
-  transition: all ease 0.4s;
+  transition: all ease 0.2s;
+  bottom: 0;
+  transform: translateY(60px);
+}
+
+.flashSales-overlay:hover .addToCart {
+  transform: translateY(0px);
 }
 
 .flashSales-cart h3 {
@@ -203,4 +204,11 @@
   border-radius: 4px;
   margin: 60px 0px 60px 448px;
   border: 1px solid #db4444;
+  transition: all ease 0.2s;
+}
+
+.flashSales .flashSales-allPro:hover {
+  background: black;
+  color: white;
+  border: 1px solid white;
 }

@@ -15,7 +15,7 @@ const Home = () => {
       <HomeCategory />
       <FlashSales />
       <Categories />
-      {/* <BestSelling /> */}
+      <BestSelling />
       {/* <Recommend /> */}
       {/* <OurProducts /> */}
       {/* <Featured /> */}

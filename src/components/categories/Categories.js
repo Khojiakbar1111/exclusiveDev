@@ -1,8 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./categories.css";
-import axios from "axios";
+import categoryData from "./categoryData/categoryData.json";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
+  const [categories, setCategories] = useState(categoryData);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("./categoryData/categoryData.json")
+  //     .then((response) => setCategories(response.data))
+  //     .catch((error) => console.log(error.message));
+  // }, []);
+
   return (
     <section className="categories">
       <div className="category-cate">
@@ -21,7 +31,15 @@ const Categories = () => {
         </div>
       </div>
       <div className="category-box">
-        <div className="category-cart"></div>
+        {categories.length &&
+          categories.map((category) => (
+            <div key={category.id} className="category-cart">
+              <Link className="category-img" to={category.link}>
+                <img src={category.image} alt={category.name} />
+              </Link>
+              <h3>{category.name}</h3>
+            </div>
+          ))}
       </div>
     </section>
   );

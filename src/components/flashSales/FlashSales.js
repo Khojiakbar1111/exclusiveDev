@@ -67,17 +67,17 @@ const FlashSales = () => {
       </div>
       <div className="falshSales-section">
         {flashSales &&
-          flashSales.slice(0, 4).map((item) => {
+          flashSales.map((item) => {
             return (
               <div className="flashSales-cart" key={item.id}>
                 <div className="flashSales-overlay">
                   <div className="flashSales-icons">
                     <div className="flashSales-discount">-{item.discount}%</div>
                     <div className="flash-btns">
-                      <button>
+                      <button className="flash-like">
                         <i className="fa-regular fa-heart"></i>
                       </button>
-                      <button>
+                      <button className="flash-detail">
                         <i className="fa-regular fa-eye"></i>
                       </button>
                     </div>
