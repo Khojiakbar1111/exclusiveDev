@@ -16,8 +16,8 @@ const Home = () => {
       <FlashSales />
       <Categories />
       <BestSelling />
-      {/* <Recommend /> */}
-      {/* <OurProducts /> */}
+      <Recommend />
+      <OurProducts />
       {/* <Featured /> */}
       {/* <Service /> */}
     </div>

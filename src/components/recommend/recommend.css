@@ -1,0 +1,79 @@
+.recommend {
+  padding: 140px 135px;
+}
+
+.recommend-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1115px;
+  height: 500px;
+  padding: 69px 56px;
+  background: black;
+}
+
+.reccomend-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 34px;
+}
+
+.reccomend-left h4 {
+  font-size: 16px;
+  color: #00ff66;
+}
+
+.reccomend-left h1 {
+  font-size: 48px;
+  color: white;
+}
+
+.reccomend-limit-box {
+  display: flex;
+  gap: 24px;
+}
+
+.reccomend-limit {
+  width: 62px;
+  height: 62px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reccomend-limit p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.reccomend-limit span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.reccomend-left > button {
+  padding: 16px 48px;
+  background: #00ff66;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.reccomend-right {
+  width: 560px;
+  background-image: url(./reccomendBlur.png);
+  background-position: center;
+  background-size: contain;
+  mix-blend-mode: screen;
+}
+
+.reccomend-right img {
+  width: 100%;
+}
