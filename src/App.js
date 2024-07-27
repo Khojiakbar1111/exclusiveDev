@@ -18,8 +18,6 @@ function App() {
 
   const [userAcc, setUserAcc] = useState(false);
 
-  console.log(userAcc);
-
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);

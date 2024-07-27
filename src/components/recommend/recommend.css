@@ -67,11 +67,7 @@
 }
 
 .reccomend-right {
-  width: 560px;
-  background-image: url(./reccomendBlur.png);
-  background-position: center;
-  background-size: contain;
-  mix-blend-mode: screen;
+  width: 560px; 
 }
 
 .reccomend-right img {

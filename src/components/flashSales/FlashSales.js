@@ -16,7 +16,6 @@ const images = {
 
 const FlashSales = () => {
   const [flashSales, setFlashSales] = useState([]);
-  console.log(flashSales);
 
   useEffect(() => {
     axios

@@ -1,3 +1,124 @@
 .ourProducts {
-  padding: 0px 135px;
+  padding: 0px 130px;
+}
+
+.ourProducts-box {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.ourProduct-cart {
+  width: 270px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flashSales-overlay {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(to bottom, #f5f5f5 250px, white 250px);
+  overflow: hidden;
+}
+
+.flashSales-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 12px;
+}
+
+.flashSales-icons .flashSales-discount {
+  width: 55px;
+  height: 26px;
+  background: #db4444;
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash-btns {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flash-btns button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: white;
+  transition: all ease 0.3s;
+}
+
+.flash-btns button:hover {
+  background: #db4444;
+  color: white;
+}
+
+.flashSales-overlay .addToCart {
+  position: absolute;
+  width: 100%;
+  padding: 20px 85px;
+  background: black;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-top: 58%;
+  transition: all ease 0.2s;
+  bottom: 0;
+  transform: translateY(60px);
+}
+
+.flashSales-overlay:hover .addToCart {
+  transform: translateY(0px);
+}
+
+.ourProduct-cart h3 {
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.ourProduct-cart p {
+  font-size: 16px;
+  color: #db4444;
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.flashSales-allPro {
+  padding: 16px 48px;
+  border: none;
+  background: #db4444;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  margin: 60px 0px 60px 448px;
+  border: 1px solid #db4444;
+  transition: all ease 0.2s;
+}
+
+.flashSales-allPro:hover {
+  background: black;
+  color: white;
+  border: 1px solid white;
 }
