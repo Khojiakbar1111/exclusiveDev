@@ -4,13 +4,12 @@
 
 .ourProducts-box {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 257px 257px 257px 257px;
   gap: 30px;
   margin-top: 40px;
 }
 
 .ourProduct-cart {
-  width: 270px;
   height: 350px;
   display: flex;
   flex-direction: column;
