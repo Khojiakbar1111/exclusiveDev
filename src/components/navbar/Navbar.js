@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { Link, useLocation } from "react-router-dom";
-import { FaUser } from "react-icons/fa6";
+import { FaUser, FaRegCircleXmark } from "react-icons/fa6";
+import { IoIosStarOutline } from "react-icons/io";
+import { BiLogOut } from "react-icons/bi";
+import { FiShoppingBag } from "react-icons/fi";
 
 const Navbar = ({ userAcc }) => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
   const [isMobile, setIsMobile] = useState(false);
+  const [account, setAccount] = useState(false);
 
   const handleMobileBtnClick = () => {
     setIsMobile(!isMobile);
@@ -20,6 +24,14 @@ const Navbar = ({ userAcc }) => {
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
+
+  const onAccountHandle = () => {
+    setAccount(!account);
+  };
+
+  const onCLoseUser = () => {
+    setAccount(false);
+  };
 
   return (
     <nav>
@@ -79,7 +91,7 @@ const Navbar = ({ userAcc }) => {
           </Link>
         )}
         {location.pathname === "/signup" || location.pathname === "/login" || (
-          <Link>
+          <Link to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
           </Link>
         )}
@@ -90,9 +102,47 @@ const Navbar = ({ userAcc }) => {
           ></i>
         </button>
         {userAcc && (
-          <button className="user-acc">
-            <FaUser />
-          </button>
+          <div className="user-acc_box">
+            <button className="user-acc" onClick={onAccountHandle}>
+              <FaUser />
+            </button>
+            {account && (
+              <ul className="user-info">
+                <li>
+                  <FaUser className="user-acc_icons" />
+                  <Link onClick={onCLoseUser} to="/account">
+                    Manage My Account
+                  </Link>
+                </li>
+                <li>
+                  <FiShoppingBag className="user-acc_icons" />
+                  <Link onClick={onCLoseUser} to="/myoffer">
+                    {" "}
+                    My Offer
+                  </Link>
+                </li>
+                <li>
+                  <FaRegCircleXmark className="user-acc_icons" />
+                  <Link onClick={onCLoseUser} to="/mycancellation">
+                    {" "}
+                    My Cancenllations
+                  </Link>
+                </li>
+                <li>
+                  <IoIosStarOutline className="user-acc_icons" />
+                  <Link onClick={onCLoseUser} to="/myreview">
+                    My Reviews
+                  </Link>
+                </li>
+                <li>
+                  <BiLogOut className="user-acc_icons" />
+                  <Link onClick={onCLoseUser} to="/mylogout">
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
         )}
       </div>
     </nav>

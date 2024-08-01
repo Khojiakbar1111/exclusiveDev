@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./categories.css";
-import categoryData from "./categoryData/categoryData.json";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Categories = () => {
-  const [categories, setCategories] = useState(categoryData);
+  const [categories, setCategories] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("./categoryData/categoryData.json")
-  //     .then((response) => setCategories(response.data))
-  //     .catch((error) => console.log(error.message));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/product")
+      .then((response) => setCategories(response.data))
+      .catch((error) => console.log(error.message));
+  }, []);
 
   return (
     <section className="categories">
@@ -31,7 +31,7 @@ const Categories = () => {
         </div>
       </div>
       <div className="category-box">
-        {categories.length &&
+        {categories &&
           categories.map((category) => (
             <div key={category.id} className="category-cart">
               <Link className="category-img" to={category.link}>

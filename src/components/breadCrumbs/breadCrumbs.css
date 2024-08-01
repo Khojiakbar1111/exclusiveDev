@@ -1,0 +1,28 @@
+.breadCrumbs {
+  position: absolute;
+  top: 194px;
+  left: 135px;
+}
+
+.breadCrumbs > * {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.breadCrumbs .crumb::after {
+  content: "/";
+  margin-left: 10px;
+}
+
+.breadCrumbs .crumb:last-child::after {
+  display: none;
+}
+
+.breadCrumbs .crumb > a {
+  color: #e3e3e3;
+}
+
+.breadCrumbs .crumb > a.active {
+  color: black;
+}

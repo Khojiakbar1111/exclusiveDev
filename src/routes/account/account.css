@@ -1,0 +1,36 @@
+.account {
+  padding: 181px 135px;
+  border-top: 2px solid #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.account-left h3 {
+  font-size: 16px;
+}
+
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 35px;
+}
+
+.account-list li {
+  list-style: none;
+}
+
+.account-list li a {
+  color: #989797;
+  font-size: 16px;
+}
+
+.account-list li a.active {
+  color: #db4444;
+}

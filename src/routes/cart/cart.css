@@ -1,0 +1,172 @@
+.parent-cart {
+  width: 100%;
+  padding: 80px 135px;
+  border: 2px solid #ececec;
+}
+
+.cart-box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cart-img {
+  display: flex;
+  gap: 20px;
+}
+
+.cart-info {
+  width: 100%;
+  height: 72px;
+  border-radius: 6px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  display: grid;
+  align-items: center;
+  padding-left: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow: 1px 1px 3px 3px rgba(210, 209, 209, 0.3);
+}
+
+.cart {
+  width: 100%;
+  height: 72px;
+  border-radius: 6px;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 40px;
+  align-items: center;
+  box-shadow: 1px 1px 3px 3px rgba(210, 209, 209, 0.3);
+}
+
+.cart input {
+  width: 72px;
+  height: 44px;
+  border: 2px solid #ececec;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.cart-img {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.cart-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-btns button {
+  width: 218px;
+  height: 56px;
+  border: 2px solid #9f9f9f;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all ease 0.2s;
+}
+
+.cart-btns button:hover {
+  background: black;
+  color: white;
+  border-color: white;
+}
+
+.cart-btns_coupon {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.cart-btns_coupon button:nth-child(1) {
+  width: 300px;
+  height: 56px;
+  border: 2px solid #9f9f9f;
+  text-align: left;
+  padding-left: 24px;
+  font-size: 16px;
+  color: #bfbfbf;
+  border-radius: 6px;
+  background: transparent;
+  transition: all ease 0.2s;
+}
+
+.cart-btns_coupon button:nth-child(1):hover {
+  background: #db4444;
+  color: white;
+  border-color: white;
+}
+
+.cart-btns_coupon button:nth-child(2) {
+  width: 211px;
+  height: 56px;
+  border: none;
+  border-radius: 6px;
+  background: #db4444;
+  color: white;
+  font-size: 16px;
+  transition: all ease 0.2s;
+}
+
+.cart-btns_coupon button:nth-child(2):hover {
+  background: black;
+  color: white;
+}
+
+.cart-total_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-total {
+  width: 470px;
+  height: 324px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-top: 40px;
+  padding: 32px 24px;
+}
+
+.cart-total h1 {
+  font-size: 20px;
+}
+
+.cart-total_sub {
+  margin-top: 24px;
+  border-bottom: 2px solid #9f9f9f;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.cart-totaly_sub {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.cart-total > button {
+  width: 260px;
+  height: 56px;
+  border: none;
+  border-radius: 6px;
+  background: #db4444;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 58px;
+  transition: all ease 0.2s;
+}
+
+.cart-total > button:hover {
+  background: black;
+  color: white;
+}

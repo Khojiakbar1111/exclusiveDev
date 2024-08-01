@@ -1,0 +1,41 @@
+.pageNotFound {
+  width: 100%;
+  border-top: 2px solid #e3e3e3;
+  padding: 80px 135px;
+}
+
+.pageNotFound-box {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.pageNotFound-box h1 {
+  font-size: 110px;
+}
+
+.pageNotFound-box p {
+  font-size: 16px;
+}
+
+.pageNotFound-box > a {
+  width: 254px;
+  height: 56px;
+  border: none;
+  border-radius: 5px;
+  background: #db4444;
+  color: white;
+  font-size: 16px;
+  margin-top: 40px;
+  transition: all ease 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageNotFound-box > a:hover {
+  background: black;
+  color: white;
+}

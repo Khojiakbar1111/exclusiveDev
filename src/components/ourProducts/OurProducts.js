@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ourProducts.css";
-import OurProductData from "./ourProductData.json";
+import axios from "axios";
 
 const OurProducts = () => {
-  const [productData, setProductData] = useState(OurProductData);
-  console.log(productData);
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/ourProduct")
+      .then((repsonse) => setProductData(repsonse.data));
+  });
   return (
     <section className="ourProducts">
       <div className="best-cate">

@@ -91,6 +91,42 @@ nav .nav_logo {
   display: none;
 }
 
+.user-acc_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info {
+  width: 225px;
+  height: 210px;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  border-radius: 6px;
+  background: linear-gradient(rgb(198, 195, 195), #8a6490, #8a6490, #8a6490);
+  padding: 18px 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: white;
+}
+
+.user-info li {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.user-info li .user-acc_icons {
+  font-size: 18px;
+}
+
+.user-info li a {
+  color: white;
+}
+
 @media screen and (max-width: 768px) {
   nav {
     position: relative;
@@ -113,7 +149,7 @@ nav .nav_logo {
     transition: all 0.5s linear;
   }
 
-  .nav_links.active{
+  .nav_links.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
@@ -139,7 +175,7 @@ nav .nav_logo {
     cursor: pointer;
   }
 
-  .mobile_btn{
+  .mobile_btn {
     display: block;
   }
 }
