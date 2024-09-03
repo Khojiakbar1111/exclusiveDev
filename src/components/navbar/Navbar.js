@@ -86,7 +86,7 @@ const Navbar = ({ userAcc }) => {
         </div>
 
         {location.pathname === "/signup" || location.pathname === "/login" || (
-          <Link>
+          <Link to="/wishlist">
             <i className="fa-regular fa-heart"></i>
           </Link>
         )}

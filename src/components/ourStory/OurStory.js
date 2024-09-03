@@ -3,6 +3,7 @@ import "./ourStory.css";
 import ourStory1 from "../assets/ourStoryImg/ourStory1.png";
 
 const OurStory = () => {
+  console.log("ourStory");
   return (
     <section className="ourStory">
       <div className="our-story-left">

@@ -1,30 +1,71 @@
-import { NavLink, Route, Routes, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import "./account.css";
-import MyProfile from "../../components/myProfile/MyProfile";
 
 function Account() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("myprofile");
+  }, [navigate]);
+
   return (
     <div className="account">
       <div className="account-left">
         <h3>Manage My Account</h3>
         <ul className="account-list">
           <li>
-            <NavLink to="myprofile">My Profile</NavLink>
+            <NavLink
+              to="myprofile"
+              className={({ isActive }) =>
+                isActive ? "active-link" : "inactive-link"
+              }
+            >
+              My Profile
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/addressbook">Address Book</NavLink>
+            <NavLink
+              to="addressbook"
+              className={({ isActive }) =>
+                isActive ? "active-link" : "inactive-link"
+              }
+            >
+              Address Book
+            </NavLink>
           </li>
           <li>
-            <NavLink to="mypaymentoption">My Payment Options</NavLink>
+            <NavLink
+              to="mypaymentoption"
+              className={({ isActive }) =>
+                isActive ? "active-link" : "inactive-link"
+              }
+            >
+              My Payment Options
+            </NavLink>
           </li>
         </ul>
         <h3>My Orders</h3>
         <ul className="account-list">
           <li>
-            <NavLink to="myreturn">My Returns</NavLink>
+            <NavLink
+              to="myreturn"
+              className={({ isActive }) =>
+                isActive ? "active-link" : "inactive-link"
+              }
+            >
+              My Returns
+            </NavLink>
           </li>
           <li>
-            <NavLink to="mycancellation">My Cancellations</NavLink>
+            <NavLink
+              to="mycancellation"
+              className={({ isActive }) =>
+                isActive ? "active-link" : "inactive-link"
+              }
+            >
+              My Cancellations
+            </NavLink>
           </li>
         </ul>
         <h3>My Wishlists</h3>

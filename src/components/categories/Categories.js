@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./categories.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../redux/slices/dataSlice";
 
 const Categories = () => {
-  const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
+  const { dataJson, isLoading, isError } = useSelector((state) => state.data);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/product")
-      .then((response) => setCategories(response.data))
-      .catch((error) => console.log(error.message));
-  }, []);
+    dispatch(fetchData());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Error loading data. Please try again later.</p>;
+  }
 
   return (
     <section className="categories">
@@ -31,15 +38,17 @@ const Categories = () => {
         </div>
       </div>
       <div className="category-box">
-        {categories &&
-          categories.map((category) => (
-            <div key={category.id} className="category-cart">
-              <Link className="category-img" to={category.link}>
-                <img src={category.image} alt={category.name} />
-              </Link>
-              <h3>{category.name}</h3>
-            </div>
-          ))}
+        {dataJson &&
+          dataJson
+            .filter((item) => item.category === "homeCate")
+            .map((category) => (
+              <div key={category.id} className="category-cart">
+                <Link className="category-img" to={category.link}>
+                  <img src={category.image} alt={category.name} />
+                </Link>
+                <h3>{category.name}</h3>
+              </div>
+            ))}
       </div>
     </section>
   );

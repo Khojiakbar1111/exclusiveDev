@@ -29,8 +29,13 @@
 .account-list li a {
   color: #989797;
   font-size: 16px;
+  text-decoration: none;
 }
 
-.account-list li a.active {
+.account-list li a.active-link {
   color: #db4444;
+}
+
+.account-list li a.inactive-link {
+  color: #989797;
 }

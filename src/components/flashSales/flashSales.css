@@ -89,7 +89,7 @@
   color: black;
 }
 
-.falshSales-section {
+.flashSales-section {
   display: flex;
   gap: 30px;
   margin-top: 40px;
@@ -128,7 +128,7 @@
   justify-content: center;
 }
 
-.cart-img {
+.flashSales-overlay .cart-img {
   display: flex;
   justify-content: center;
   align-items: center;

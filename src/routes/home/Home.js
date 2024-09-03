@@ -9,15 +9,15 @@ import Featured from "../../components/featured/Featured";
 import Service from "../../components/service/Service";
 import HomeCategory from "../../components/homeCategory/HomeCategory";
 
-const Home = () => {
+const Home = ({ addToCart, addToLike }) => {
   return (
     <div>
       <HomeCategory />
-      <FlashSales />
+      <FlashSales addToCart={addToCart} addToLike={addToLike} />
       <Categories />
       <BestSelling />
       <Recommend />
-      <OurProducts />
+      <OurProducts addToCart={addToCart} />
       {/* <Featured /> */}
       <Service />
     </div>

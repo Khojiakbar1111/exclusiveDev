@@ -3,157 +3,156 @@
     {
       "id": 1,
       "discount": 40,
-      "image": "../assets/flashSales/gamepad.png",
+      "image": "./assets/flashSales/gamepad.png",
       "name": "HAVIT HV-G92 Gamepad",
       "discountPrice": 120,
-      "price": 160
+      "price": 160,
+      "category": "flashSales"
     },
 
     {
       "id": 2,
       "discount": 35,
-      "image": "../assets/flashSales/keyboard.png",
+      "image": "./assets/flashSales/keyboard.png",
       "name": "AK-900 Wired Keyboard",
       "discountPrice": 960,
-      "price": 1160
+      "price": 1160,
+      "category": "flashSales"
     },
 
     {
       "id": 3,
       "discount": 30,
-      "image": "../assets/flashSales/TV.png",
+      "image": "./assets/flashSales/TV.png",
       "name": "IPS LCD Gaming Monitor",
       "discountPrice": 370,
-      "price": 400
+      "price": 400,
+      "category": "flashSales"
     },
 
     {
       "id": 4,
       "discount": 40,
-      "image": "../assets/flashSales/chair.png",
+      "image": "./assets/flashSales/chair.png",
       "name": "S-Series Comfort Chair ",
       "discountPrice": 375,
-      "price": 400
-    }
-  ],
-
-  "ourProduct": [
-    {
-      "id": 0,
-      "image": "./assets/ourProductImg/ourProduct1.png",
-      "name": "Breed Dry Dog Food",
-      "price": 100,
-      "starImg": "./assets/ourProductImg/star1.png"
-    },
-
-    {
-      "id": 2,
-      "image": "./assets/ourProductImg/ourProduct2.png",
-      "name": "CANON EOS DSLR Camera",
-      "price": 360,
-      "starImg": "./assets/ourProductImg/star2.png"
-    },
-
-    {
-      "id": 3,
-      "image": "./assets/ourProductImg/ourProduct3.png",
-      "name": "ASUS FHD Gaming Laptop",
-      "price": 700,
-      "starImg": "./assets/ourProductImg/star3.png"
-    },
-
-    {
-      "id": 4,
-      "image": "./assets/ourProductImg/ourProduct4.png",
-      "name": "Curology Product Set ",
-      "price": 500,
-      "starImg": "./assets/ourProductImg/star2.png"
+      "price": 400,
+      "category": "flashSales"
     },
 
     {
       "id": 5,
-      "image": "./assets/ourProductImg/ourProduct5.png",
-      "name": "Kids Electric Car",
-      "price": 960,
-      "starImg": "./assets/ourProductImg/star3.png"
+      "image": "./assets/ourProductImg/ourProduct1.png",
+      "name": "Breed Dry Dog Food",
+      "price": 100,
+      "starImg": "./assets/ourProductImg/star1.png",
+      "category": "ourProduct"
     },
 
     {
       "id": 6,
-      "image": "./assets/ourProductImg/ourProduct6.png",
-      "name": "Jr. Zoom Soccer Cleats",
-      "price": 1160,
-      "starImg": "./assets/ourProductImg/star3.png"
+      "image": "./assets/ourProductImg/ourProduct2.png",
+      "name": "CANON EOS DSLR Camera",
+      "price": 360,
+      "starImg": "./assets/ourProductImg/star2.png",
+      "category": "ourProduct"
     },
 
     {
       "id": 7,
-      "image": "./assets/ourProductImg/ourProduct7.png",
-      "name": "GP11 Shooter USB Gamepad",
-      "price": 660,
-      "starImg": "./assets/ourProductImg/star5.png"
+      "image": "./assets/ourProductImg/ourProduct3.png",
+      "name": "ASUS FHD Gaming Laptop",
+      "price": 700,
+      "starImg": "./assets/ourProductImg/star3.png",
+      "category": "ourProduct"
     },
 
     {
       "id": 8,
+      "image": "./assets/ourProductImg/ourProduct4.png",
+      "name": "Curology Product Set ",
+      "price": 500,
+      "starImg": "./assets/ourProductImg/star2.png",
+      "category": "ourProduct"
+    },
+
+    {
+      "id": 9,
+      "image": "./assets/ourProductImg/ourProduct5.png",
+      "name": "Kids Electric Car",
+      "price": 960,
+      "starImg": "./assets/ourProductImg/star3.png",
+      "category": "ourProduct"
+    },
+
+    {
+      "id": 10,
+      "image": "./assets/ourProductImg/ourProduct6.png",
+      "name": "Jr. Zoom Soccer Cleats",
+      "price": 1160,
+      "starImg": "./assets/ourProductImg/star3.png",
+      "category": "ourProduct"
+    },
+
+    {
+      "id": 11,
+      "image": "./assets/ourProductImg/ourProduct7.png",
+      "name": "GP11 Shooter USB Gamepad",
+      "price": 660,
+      "starImg": "./assets/ourProductImg/star5.png",
+      "category": "ourProduct"
+    },
+
+    {
+      "id": 12,
       "image": "./assets/ourProductImg/ourProduct8.png",
       "name": "Quilted Satin Jacket",
       "price": 660,
-      "starImg": "./assets/ourProductImg/star5.png"
-    }
-  ],
+      "starImg": "./assets/ourProductImg/star5.png",
+      "category": "ourProduct"
+    },
 
-  "product": [
     {
-      "id": 1,
+      "id": 13,
       "image": "./assets/phone.svg",
       "name": "Phone",
-      "link": "/phone"
+      "link": "/phone",
+      "category": "homeCate"
     },
     {
-      "id": 2,
+      "id": 14,
       "image": "./assets/computer.svg",
       "name": "Computers",
-      "link": "/computer"
+      "link": "/computer",
+      "category": "homeCate"
     },
     {
-      "id": 3,
+      "id": 15,
       "image": "./assets/smartWatch.svg",
       "name": "SmartWatch",
-      "link": "/smartwatch"
+      "link": "/smartwatch",
+      "category": "homeCate"
     },
     {
-      "id": 4,
+      "id": 16,
       "image": "./assets/camera.svg",
       "name": "Camera",
-      "link": "/camera"
+      "link": "/camera",
+      "category": "homeCate"
     },
     {
-      "id": 5,
+      "id": 17,
       "image": "./assets/headPhone.svg",
       "name": "HeadPhones",
-      "link": "/headphone"
+      "link": "/headphone",
+      "category": "homeCate"
     },
     {
-      "id": 6,
+      "id": 18,
       "image": "./assets/gamePade.svg",
       "name": "Gaming",
-      "link": "/gaming"
-    }
-  ],
-
-  "cart": [
-    {
-      "id": 1,
-      "image": "./assets/cartImg/cartGamepad.png",
-      "name": "LCD Monitor",
-      "price": 650
-    },
-    {
-      "id": 2,
-      "image": "./assets/cartImg/carttv.png",
-      "name": "H1 Gamepad",
-      "price": 550
+      "link": "/gaming",
+      "category": "homeCate"
     }
   ]
 }
