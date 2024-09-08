@@ -1,25 +1,47 @@
-import { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  clearWishlist,
+  removeFromWishlist,
+} from "../../components/redux/slices/dataWishlist";
 import "./wishlist.css";
-
 import { BsTrash } from "react-icons/bs";
+import { addToCart } from "../../components/redux/slices/dataCart";
+import { Link } from "react-router-dom";
 
 function Wishlist() {
-  const [wishlist, setWishlist] = useState(
-    JSON.parse(localStorage.getItem("like")) || []
-  );
+  const dispatch = useDispatch();
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
+
+  const handleRemoveItem = (id) => {
+    dispatch(removeFromWishlist(id));
+  };
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
+
+  const handleRemoveWishlist = () => {
+    dispatch(clearWishlist());
+  };
 
   return (
     <>
-      {!wishlist.length ? (
-        <h1>You do not have liked product yet</h1>
+      {!wishlistItems.length ? (
+        <div className="checking">
+          <h1>There are no items in your wishlist yet</h1>
+          <Link to={"/"}>Back home</Link>
+        </div>
       ) : (
         <div className="wishlist">
           <div className="title">
-            <h1>Wishlist(4)</h1>
-            <button>Move All to Bag</button>
+            <h1>Wishlist ({wishlistItems.length})</h1>
+            <button onClick={() => handleRemoveWishlist()}>
+              Move All to Bag
+            </button>
           </div>
           <div className="wishlist-box">
-            {wishlist.map((item) => {
+            {wishlistItems.map((item) => {
               return (
                 <div className="wishlist-cart" key={item.id}>
                   <div className="wishlist-overlay">
@@ -28,7 +50,10 @@ function Wishlist() {
                         -{item.discount}%
                       </div>
                       <div className="flash-btns">
-                        <button className="flash-detail">
+                        <button
+                          className="flash-detail"
+                          onClick={() => handleRemoveItem(item.id)}
+                        >
                           <BsTrash />
                         </button>
                       </div>
@@ -36,7 +61,12 @@ function Wishlist() {
                     <div className="cart-img">
                       <img src={item.image} alt={item.name} />
                     </div>
-                    <button className="addToCart">Add To Cart</button>
+                    <button
+                      className="addToCart"
+                      onClick={() => handleAddToCart(item)}
+                    >
+                      Add To Cart
+                    </button>
                   </div>
                   <h3>{item.name}</h3>
                   <p>

@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../redux/slices/dataSlice";
 import "./ourProducts.css";
+import FetchError from "../fetchError/FetchError";
+import { BeatLoader } from "react-spinners";
+import { addToCart } from "../redux/slices/dataCart";
 
-const OurProducts = ({ addToCart }) => {
+const OurProducts = () => {
   const dispatch = useDispatch();
   const { dataJson, isLoading, isError } = useSelector((state) => state.data);
 
@@ -11,12 +14,12 @@ const OurProducts = ({ addToCart }) => {
     dispatch(fetchData());
   }, [dispatch]);
 
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
+
   if (isLoading) {
     return <p>Loading...</p>;
-  }
-
-  if (isError) {
-    return <p>Error loading data. Please try again later.</p>;
   }
 
   return (
@@ -37,6 +40,8 @@ const OurProducts = ({ addToCart }) => {
         </div>
       </div>
       <div className="ourProducts-box">
+        {isError && <FetchError />}
+        {isLoading && <BeatLoader />}
         {dataJson &&
           dataJson
             .filter((item) => item.category === "ourProduct")
@@ -58,7 +63,7 @@ const OurProducts = ({ addToCart }) => {
                   </div>
                   <button
                     className="addToCart"
-                    onClick={() => addToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                   >
                     Add To Cart
                   </button>

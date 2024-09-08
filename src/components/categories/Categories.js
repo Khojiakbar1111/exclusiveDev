@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./categories.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../redux/slices/dataSlice";
+import FetchError from "../fetchError/FetchError";
 
 const Categories = () => {
   const dispatch = useDispatch();
@@ -14,10 +15,6 @@ const Categories = () => {
 
   if (isLoading) {
     return <p>Loading...</p>;
-  }
-
-  if (isError) {
-    return <p>Error loading data. Please try again later.</p>;
   }
 
   return (
@@ -38,6 +35,7 @@ const Categories = () => {
         </div>
       </div>
       <div className="category-box">
+        {isError && <FetchError />}
         {dataJson &&
           dataJson
             .filter((item) => item.category === "homeCate")

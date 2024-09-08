@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -15,51 +16,35 @@ import PageNotFound from "./routes/pageNotFound/PageNotFound";
 import Cart from "./routes/cart/Cart";
 import Wishlist from "./routes/wishlist/Wishlist";
 import Admin from "./routes/admin/Admin";
-import { useLocation } from "react-router-dom";
+import FetchError from "./components/fetchError/FetchError";
+import { fetchData } from "./components/redux/slices/dataSlice";
+import { BeatLoader } from "react-spinners";
+import FetchLoading from "./components/fetchLoading/FetchLoading";
 
 function App() {
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.data);
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+
+  if (isLoading) {
+    <BeatLoader />;
+  }
+
   const [users, setUsers] = useState(
     JSON.parse(localStorage.getItem("users")) || []
   );
 
   const [userAcc, setUserAcc] = useState(false);
 
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart")) || []
-  );
-
-  const [like, setLike] = useState(
-    JSON.parse(localStorage.getItem("like")) || []
-  );
-
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  useEffect(() => {
-    localStorage.setItem("like", JSON.stringify(like));
-  }, [like]);
-
   const addUsers = (user) => {
     setUsers((prev) => [...prev, user]);
-  };
-
-  // const addToCart = (product) => {
-  //   const updateCart = [...cart, { ...product, count: 1 }];
-  //   localStorage.setItem("cart", JSON.stringify(updateCart));
-  //   setCart(updateCart);
-  //   alert("A product has been added successfully");
-  // };
-
-  const addToLike = (product) => {
-    const updateLike = [...like, { ...product, count: 1 }];
-    localStorage.setItem("like", JSON.stringify(updateLike));
-    setLike(updateLike);
-    alert("Like");
   };
 
   const { pathname } = useLocation();
@@ -70,11 +55,11 @@ function App() {
 
   return (
     <div className="App">
+      {isLoading && <FetchLoading />}
       <Header />
       <Navbar userAcc={userAcc} />
-      {/* <BreadCrumbs /> */}
       <Routes>
-        <Route path="/" element={<Home addToLike={addToLike} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setUserAcc={setUserAcc} />} />
         <Route
           path="/signup"

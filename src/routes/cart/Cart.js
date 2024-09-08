@@ -1,29 +1,26 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./cart.css";
 import axios from "axios";
 import { FaXmark } from "react-icons/fa6";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../components/redux/slices/dataCart";
 
 function Cart() {
-  const [cartData, setCartData] = useState(
-    JSON.parse(localStorage.getItem("cart")) || []
-  );
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3000/cart")
-  //     .then((response) => setCartData(response.data));
-  // }, []);
-
-  const onDelete = (id) => {
-    const deletedData = cartData.filter((item) => item.id !== id);
-    localStorage.setItem("cart", JSON.stringify(deletedData));
-    setCartData(deletedData);
+  const deleteItems = (id) => {
+    dispatch(removeFromCart(id));
   };
 
   return (
     <div className="parent-cart">
-      {cartData.length === 0 ? (
-        <h1>There is no cart in your cart</h1>
+      {cartItems.length === 0 ? (
+        <div className="checking">
+          <h1>There are no items in your cart yet</h1>
+          <Link to={"/"}>Back home</Link>
+        </div>
       ) : (
         <div className="cart-box">
           <div className="cart-info">
@@ -32,11 +29,11 @@ function Cart() {
             <p>Quantity</p>
             <p>Subtotal</p>
           </div>
-          {cartData.map((item) => {
+          {cartItems.map((item) => {
             return (
               <div className="cart" key={item.id}>
                 <button
-                  onClick={() => onDelete(item.id)}
+                  onClick={() => deleteItems(item.id)}
                   className="cart-delete"
                 >
                   <FaXmark />

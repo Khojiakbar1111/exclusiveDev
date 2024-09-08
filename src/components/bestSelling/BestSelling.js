@@ -5,8 +5,16 @@ import best1 from "../assets/bestImg/best1.png";
 import best2 from "../assets/bestImg/best2.png";
 import best3 from "../assets/bestImg/best3 (2).png";
 import best4 from "../assets/bestImg/best4.png";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/dataCart";
 
 const BestSelling = () => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart());
+  };
+
   return (
     <div className="best-selling">
       <div className="best-cate">

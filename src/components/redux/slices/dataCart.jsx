@@ -1,41 +1,37 @@
+// redux/slices/dataCart.js
 import { createSlice } from "@reduxjs/toolkit";
-
-// Helper function to save the cart to localStorage
-const saveCartToLocalStorage = (cartItems) => {
-  localStorage.setItem("cart", JSON.stringify(cartItems));
-};
-
-// Helper function to load the cart from localStorage
-const loadCartFromLocalStorage = () => {
-  const savedCart = localStorage.getItem("cart");
-  return savedCart ? JSON.parse(savedCart) : [];
-};
+import { toast } from "react-toastify";
 
 const initialState = {
-  cartItems: loadCartFromLocalStorage(),
+  cartItems: JSON.parse(localStorage.getItem("cart")) || [],
 };
 
-const cartSlice = createSlice({
+const dataCartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const item = action.payload;
-      const existingItem = state.cartItems.find(
-        (cartItem) => cartItem.id === item.id
-      );
-      if (existingItem) {
-        existingItem.quantity++;
+      const newItem = action.payload;
+      if (!state.cartItems.find((item) => item.id === newItem.id)) {
+        state.cartItems.push(newItem);
+        localStorage.setItem("cart", JSON.stringify(state.cartItems));
+        toast.success("A product has been added to cart", {
+          autoClose: 2400,
+        });
       } else {
-        state.cartItems.push({ ...item, quantity: 1 });
+        toast.info("This product had already been added ", {
+          autoClose: 2400,
+        });
       }
-
-      // Save updated cart to localStorage
-      saveCartToLocalStorage(state.cartItems);
+    },
+    removeFromCart: (state, action) => {
+      const itemId = action.payload;
+      state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
+      localStorage.setItem("cart", JSON.stringify(state.cartItems));
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = dataCartSlice.actions;
 
-export default cartSlice.reducer;
+export default dataCartSlice.reducer;

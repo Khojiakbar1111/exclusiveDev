@@ -5,12 +5,16 @@ import { FaUser, FaRegCircleXmark } from "react-icons/fa6";
 import { IoIosStarOutline } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import { FiShoppingBag } from "react-icons/fi";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ userAcc }) => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
   const [isMobile, setIsMobile] = useState(false);
   const [account, setAccount] = useState(false);
+
+  const wishlistCount = useSelector((state) => state.wishlist.wishlistItems);
+  const cartCount = useSelector((state) => state.cart.cartItems);
 
   const handleMobileBtnClick = () => {
     setIsMobile(!isMobile);
@@ -86,14 +90,24 @@ const Navbar = ({ userAcc }) => {
         </div>
 
         {location.pathname === "/signup" || location.pathname === "/login" || (
-          <Link to="/wishlist">
-            <i className="fa-regular fa-heart"></i>
-          </Link>
+          <>
+            <div className="wishlistCount">
+              <span>{wishlistCount.length}</span>
+            </div>
+            <Link to="/wishlist">
+              <i className="fa-regular fa-heart"></i>
+            </Link>
+          </>
         )}
         {location.pathname === "/signup" || location.pathname === "/login" || (
-          <Link to="/cart">
-            <i className="fa-solid fa-cart-shopping"></i>
-          </Link>
+          <>
+            <div className="cartCount">
+              <span>{cartCount.length}</span>
+            </div>
+            <Link to="/cart">
+              <i className="fa-solid fa-cart-shopping"></i>
+            </Link>
+          </>
         )}
 
         <button className="mobile_btn" onClick={handleMobileBtnClick}>

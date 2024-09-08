@@ -1,12 +1,16 @@
+// FlashSales.js
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../redux/slices/dataSlice";
-import { addToCart } from "../redux/slices/dataCart"; // Import the addToCart action
+import { addToCart } from "../redux/slices/dataCart";
+import { addToWishlist } from "../redux/slices/dataWishlist";
 import CountdownTimer from "../timerDown/TimerDown";
 import { Link } from "react-router-dom";
 import "./flashSales.css";
+import FetchError from "../fetchError/FetchError";
+import { ToastContainer } from "react-toastify"; // Import toast
 
-const FlashSales = ({ addToLike, category }) => {
+const FlashSales = () => {
   const dispatch = useDispatch();
   const { dataJson, isLoading, isError } = useSelector((state) => state.data);
 
@@ -18,18 +22,19 @@ const FlashSales = ({ addToLike, category }) => {
     return <p>Loading...</p>;
   }
 
-  if (isError) {
-    return <p>Error loading data. Please try again later.</p>;
-  }
-
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item)); // Dispatch the addToCart action
+    dispatch(addToCart(item));
+  };
+
+  const handleAddToLike = (item) => {
+    dispatch(addToWishlist(item));
   };
 
   const targetDate = new Date("2024-10-31T10:00:00");
 
   return (
     <section className="flashSales">
+      <ToastContainer />
       <div className="flashSales-category">
         <div className="flash-box"></div>
         <h1>Today's</h1>
@@ -46,6 +51,7 @@ const FlashSales = ({ addToLike, category }) => {
         </div>
       </div>
       <div className="flashSales-section">
+        {isError && <FetchError />}
         {dataJson &&
           dataJson
             .filter((item) => item.category === "flashSales")
@@ -57,7 +63,7 @@ const FlashSales = ({ addToLike, category }) => {
                     <div className="flash-btns">
                       <button
                         className="flash-like"
-                        onClick={() => addToLike(item)}
+                        onClick={() => handleAddToLike(item)}
                       >
                         <i className="fa-regular fa-heart"></i>
                       </button>

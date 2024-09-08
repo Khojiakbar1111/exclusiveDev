@@ -1,0 +1,14 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  position: fixed; /* Stay in place */
+  background-color: #fff;
+  background-image: linear-gradient(315deg, #ffff 0%, #fff 74%);
+  z-index: 99999;
+  perspective: 500px;
+  transition: all 0.5s ease;
+  color: white !important;
+}

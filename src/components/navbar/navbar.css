@@ -42,6 +42,7 @@ nav .nav_logo {
 } */
 
 .nav_btn {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -125,6 +126,28 @@ nav .nav_logo {
 
 .user-info li a {
   color: white;
+}
+
+.wishlistCount,
+.cartCount {
+  position: absolute;
+  left: 280px;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #db4444;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cartCount {
+  left: 325px;
+  top: 3px;
 }
 
 @media screen and (max-width: 768px) {
