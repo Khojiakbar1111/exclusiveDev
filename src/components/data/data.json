@@ -7,7 +7,8 @@
       "name": "HAVIT HV-G92 Gamepad",
       "discountPrice": 120,
       "price": 160,
-      "category": "flashSales"
+      "category": "flashSales",
+      "count": 0
     },
 
     {
@@ -17,7 +18,8 @@
       "name": "AK-900 Wired Keyboard",
       "discountPrice": 960,
       "price": 1160,
-      "category": "flashSales"
+      "category": "flashSales",
+      "count": 0
     },
 
     {
@@ -27,7 +29,8 @@
       "name": "IPS LCD Gaming Monitor",
       "discountPrice": 370,
       "price": 400,
-      "category": "flashSales"
+      "category": "flashSales",
+      "count": 0
     },
 
     {
@@ -37,7 +40,8 @@
       "name": "S-Series Comfort Chair ",
       "discountPrice": 375,
       "price": 400,
-      "category": "flashSales"
+      "category": "flashSales",
+      "count": 0
     },
 
     {
@@ -46,7 +50,8 @@
       "name": "Breed Dry Dog Food",
       "price": 100,
       "starImg": "./assets/ourProductImg/star1.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -55,7 +60,8 @@
       "name": "CANON EOS DSLR Camera",
       "price": 360,
       "starImg": "./assets/ourProductImg/star2.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -64,7 +70,8 @@
       "name": "ASUS FHD Gaming Laptop",
       "price": 700,
       "starImg": "./assets/ourProductImg/star3.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -73,7 +80,8 @@
       "name": "Curology Product Set ",
       "price": 500,
       "starImg": "./assets/ourProductImg/star2.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -82,7 +90,8 @@
       "name": "Kids Electric Car",
       "price": 960,
       "starImg": "./assets/ourProductImg/star3.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -91,7 +100,8 @@
       "name": "Jr. Zoom Soccer Cleats",
       "price": 1160,
       "starImg": "./assets/ourProductImg/star3.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -100,7 +110,8 @@
       "name": "GP11 Shooter USB Gamepad",
       "price": 660,
       "starImg": "./assets/ourProductImg/star5.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -109,7 +120,8 @@
       "name": "Quilted Satin Jacket",
       "price": 660,
       "starImg": "./assets/ourProductImg/star5.png",
-      "category": "ourProduct"
+      "category": "ourProduct",
+      "count": 0
     },
 
     {
@@ -117,42 +129,48 @@
       "image": "./assets/phone.svg",
       "name": "Phone",
       "link": "/phone",
-      "category": "homeCate"
+      "category": "homeCate",
+      "count": 0
     },
     {
       "id": 14,
       "image": "./assets/computer.svg",
       "name": "Computers",
       "link": "/computer",
-      "category": "homeCate"
+      "category": "homeCate",
+      "count": 0
     },
     {
       "id": 15,
       "image": "./assets/smartWatch.svg",
       "name": "SmartWatch",
       "link": "/smartwatch",
-      "category": "homeCate"
+      "category": "homeCate",
+      "count": 0
     },
     {
       "id": 16,
       "image": "./assets/camera.svg",
       "name": "Camera",
       "link": "/camera",
-      "category": "homeCate"
+      "category": "homeCate",
+      "count": 0
     },
     {
       "id": 17,
       "image": "./assets/headPhone.svg",
       "name": "HeadPhones",
       "link": "/headphone",
-      "category": "homeCate"
+      "category": "homeCate",
+      "count": 0
     },
     {
       "id": 18,
       "image": "./assets/gamePade.svg",
       "name": "Gaming",
       "link": "/gaming",
-      "category": "homeCate"
+      "category": "homeCate",
+      "count": 0
     }
   ]
 }

@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./cart.css";
-import axios from "axios";
-import { FaXmark } from "react-icons/fa6";
+import { FaXmark, FaSortUp, FaSortDown } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearCart,
@@ -50,7 +48,17 @@ function Cart() {
                   <p>{item.name}</p>
                 </div>
                 <p>${item.price}</p>
-                <input type="number" placeholder="01" />
+                <div className="cart-plus_minus">
+                  <span>1</span>
+                  <div className="cart-btns_btn">
+                    <button>
+                      <FaSortUp />
+                    </button>
+                    <button>
+                      <FaSortDown />
+                    </button>
+                  </div>
+                </div>
                 <p>${item.price}</p>
               </div>
             );

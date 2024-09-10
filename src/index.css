@@ -10,6 +10,13 @@ button {
   cursor: pointer;
 }
 
-/* .App {
-  position: relative;
-} */
+/* Default light mode */
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark a {
+  color: #ffffff;
+}

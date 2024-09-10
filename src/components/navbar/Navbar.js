@@ -8,6 +8,8 @@ import { FiShoppingBag } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
 const Navbar = ({ userAcc }) => {
+  const user = JSON.parse(localStorage.getItem("users")) || [];
+
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
   const [isMobile, setIsMobile] = useState(false);
@@ -115,7 +117,7 @@ const Navbar = ({ userAcc }) => {
             className={isMobile ? "fa-solid fa-xmark" : "fa-solid fa-bars"}
           ></i>
         </button>
-        {userAcc && (
+        {user.length !== 0 && (
           <div className="user-acc_box">
             <button className="user-acc" onClick={onAccountHandle}>
               <FaUser />

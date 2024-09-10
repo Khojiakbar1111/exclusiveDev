@@ -150,6 +150,18 @@ nav .nav_logo {
   top: 3px;
 }
 
+body.dark a {
+  color: white;
+}
+
+body.dark i {
+  color: white;
+}
+
+body.dark .nav_search i {
+  color: black;
+}
+
 @media screen and (max-width: 768px) {
   nav {
     position: relative;

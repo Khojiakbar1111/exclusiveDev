@@ -83,3 +83,12 @@
   color: #4d4d4d;
   border-bottom: 2px solid #4d4d4d;
 }
+
+body.dark .signup-right input {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark .signup-forgot {
+  color: white;
+}

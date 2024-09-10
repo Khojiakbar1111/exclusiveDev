@@ -1,5 +1,5 @@
 .login {
-  border: 1px solid #e3e3e3;
+  border-top: 1px solid #e3e3e3;
   padding: 60px 0px 140px 0;
   display: flex;
   gap: 129px;
@@ -44,7 +44,7 @@
 
 .login-btns {
   display: flex;
-  gap: 87px;
+  gap: 60px;
   margin-top: 40px;
 }
 
@@ -71,4 +71,16 @@
   background: #db4444;
   color: white;
   border-radius: 50%;
+}
+
+.dark .login-right input {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark .login-forgot {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  color: black;
 }

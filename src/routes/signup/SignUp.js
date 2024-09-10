@@ -4,6 +4,7 @@ import contactImg from "../../components/assets/signup/contactImg.png";
 import contactIconImg from "../../components/assets/signup/Icon-Google.png";
 import { v4 as uuidv4 } from "uuid";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = ({ addUsers }) => {
   const navigate = useNavigate();
@@ -29,44 +30,49 @@ const SignUp = ({ addUsers }) => {
       };
 
       addUsers(newUser);
-      alert("User has been registered");
+      toast.success("User has been registered");
       formRef.current.reset();
       navigate("/login");
     } else {
-      alert("Please fill all fields");
+      toast.info("Please fill all fields", {
+        autoClose: 2000,
+      });
     }
   };
 
   return (
-    <div className="signup">
-      <div className="signup-left">
-        <img src={contactImg} alt="Contact" />
+    <>
+      <div className="signup">
+        <div className="signup-left">
+          <img src={contactImg} alt="Contact" />
+        </div>
+        <div className="signup-right">
+          <h1>Create an account</h1>
+          <span>Enter your details below</span>
+          <form ref={formRef} onSubmit={handleSubmit}>
+            <input ref={firstNameRef} type="text" placeholder="Name" />
+            <input
+              ref={phoneNumberRef}
+              type="text"
+              placeholder="Email or Phone Number"
+            />
+            <input ref={passwordRef} type="password" placeholder="Password" />
+            <div className="sign-btns">
+              <button className="signup-login" type="submit">
+                Create Account
+              </button>
+              <button className="signup-forgot" type="button">
+                <img src={contactIconImg} alt="Google" /> Sign with Google
+              </button>
+              <span>
+                Already have account? <Link to="/login">Log in</Link>
+              </span>
+            </div>
+          </form>
+        </div>
       </div>
-      <div className="signup-right">
-        <h1>Create an account</h1>
-        <span>Enter your details below</span>
-        <form ref={formRef} onSubmit={handleSubmit}>
-          <input ref={firstNameRef} type="text" placeholder="Name" />
-          <input
-            ref={phoneNumberRef}
-            type="text"
-            placeholder="Email or Phone Number"
-          />
-          <input ref={passwordRef} type="password" placeholder="Password" />
-          <div className="sign-btns">
-            <button className="signup-login" type="submit">
-              Create Account
-            </button>
-            <button className="signup-forgot" type="button">
-              <img src={contactIconImg} alt="Google" /> Sign with Google
-            </button>
-            <span>
-              Already have account? <Link to="/login">Log in</Link>
-            </span>
-          </div>
-        </form>
-      </div>
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 

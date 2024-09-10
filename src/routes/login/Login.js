@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./login.css";
 import contactImg from "../../components/assets/signup/contactImg.png";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = ({ setUserAcc }) => {
   const [email, setEmail] = useState("");
@@ -16,58 +18,70 @@ const Login = ({ setUserAcc }) => {
     setPassword("");
   };
 
-  const validateUser = () => {
+  const validateUser = (e) => {
+    e.preventDefault(); // Prevent default form submission
     if (email !== "" && password !== "") {
       const user = users.find(
-        (item) => item.phoneNumber === email && item.password === password
+        (item) =>
+          item.phoneNumber === email ||
+          (item.email === email && item.password === password)
       );
       if (user) {
-        navigate("/");
-        alert("Account successful registered");
+        toast.success("Login successful", {
+          autoClose: 2000,
+          onClose: () => navigate("/"), // Navigate after showing the toast
+        });
         setUserAcc(true);
       } else {
-        alert("User is not defined");
+        toast.error("User is not defined", {
+          autoClose: 2000,
+        });
         resetInputs();
       }
     } else {
-      alert("Please fill all fields");
+      toast.info("Please fill all fields", {
+        autoClose: 2000,
+      });
     }
   };
 
   return (
-    <div className="login">
-      <div className="login-left">
-        <img src={contactImg} alt="Contact" />
+    <>
+      <div className="login">
+        <div className="login-left">
+          <img src={contactImg} alt="Contact" />
+        </div>
+        <div className="login-right">
+          <h1>Login in to Exclusive</h1>
+          <span>Enter your details below</span>
+          <form onSubmit={validateUser}>
+            <input
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="Email or Phone Number"
+              value={email}
+            />
+            <input
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              value={password}
+            />
+            <div className="login-btns">
+              <button type="submit" className="login-login">
+                Log in
+              </button>
+              <button type="button" className="login-forgot">
+                Forgot Password?
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div className="login-right">
-        <h1>Login in to Exclusive</h1>
-        <span>Enter your details below</span>
-        <form>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            placeholder="Email or Phone Number"
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Password"
-          />
-          <div className="login-btns">
-            <button
-              type="button"
-              className="login-login"
-              onClick={validateUser}
-            >
-              Log in
-            </button>
-            <button type="button" className="login-forgot">
-              Forgot Password?
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 

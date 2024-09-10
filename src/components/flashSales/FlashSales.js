@@ -1,18 +1,18 @@
-// FlashSales.js
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../redux/slices/dataSlice";
 import { addToCart } from "../redux/slices/dataCart";
-import { addToWishlist } from "../redux/slices/dataWishlist";
+import { toggleWishlist } from "../redux/slices/dataWishlist"; // Use toggle action
 import CountdownTimer from "../timerDown/TimerDown";
 import { Link } from "react-router-dom";
 import "./flashSales.css";
 import FetchError from "../fetchError/FetchError";
-import { ToastContainer } from "react-toastify"; // Import toast
+import { ToastContainer } from "react-toastify";
 
 const FlashSales = () => {
   const dispatch = useDispatch();
   const { dataJson, isLoading, isError } = useSelector((state) => state.data);
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems); // Access wishlist items
 
   useEffect(() => {
     dispatch(fetchData());
@@ -26,8 +26,12 @@ const FlashSales = () => {
     dispatch(addToCart(item));
   };
 
-  const handleAddToLike = (item) => {
-    dispatch(addToWishlist(item));
+  const handleToggleWishlist = (item) => {
+    dispatch(toggleWishlist(item));
+  };
+
+  const isItemInWishlist = (itemId) => {
+    return wishlistItems.some((item) => item.id === itemId); // Check if item is in wishlist
   };
 
   const targetDate = new Date("2024-10-31T10:00:00");
@@ -62,10 +66,18 @@ const FlashSales = () => {
                     <div className="flashSales-discount">-{item.discount}%</div>
                     <div className="flash-btns">
                       <button
-                        className="flash-like"
-                        onClick={() => handleAddToLike(item)}
+                        className={`flash-like ${
+                          isItemInWishlist(item.id) ? "liked" : ""
+                        }`}
+                        onClick={() => handleToggleWishlist(item)}
                       >
-                        <i className="fa-regular fa-heart"></i>
+                        <i
+                          className={`fa-heart ${
+                            isItemInWishlist(item.id)
+                              ? "fa-solid fa-heart red-heart"
+                              : "fa-regular fa-heart"
+                          }`}
+                        ></i>
                       </button>
                       <button className="flash-detail">
                         <i className="fa-regular fa-eye"></i>

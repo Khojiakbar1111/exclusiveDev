@@ -95,3 +95,20 @@
   background: black;
   color: white;
 }
+
+.dark .contact-right input {
+  background-color: #121212;
+  color: white;
+  border-bottom: 1px solid #ececec;
+}
+
+.dark .contact-right textarea {
+  background-color: #121212;
+  color: white;
+  border: 1px solid #ececec;
+}
+
+.dark .contact-right button:hover {
+  background-color: white;
+  color: black;
+}

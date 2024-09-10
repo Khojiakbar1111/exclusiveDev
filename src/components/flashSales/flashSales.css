@@ -212,3 +212,29 @@
   color: white;
   border: 1px solid white;
 }
+
+.red-heart {
+  color: white; /* Change heart color when item is liked */
+}
+
+.flash-like.liked {
+  background-color: #db4444; /* Optional: Change background when liked */
+}
+
+body.dark .time-content .time span {
+  color: white;
+}
+
+body.dark .flash-btns i {
+  color: black;
+}
+
+body.dark .category-cart {
+  background-color: white;
+  color: black;
+}
+
+body.dark .category-cart:hover {
+  background-color: #db4444;
+  color: white;
+}
