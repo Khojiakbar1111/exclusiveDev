@@ -4,7 +4,10 @@ import "./cart.css";
 import axios from "axios";
 import { FaXmark } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../components/redux/slices/dataCart";
+import {
+  clearCart,
+  removeFromCart,
+} from "../../components/redux/slices/dataCart";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -12,6 +15,10 @@ function Cart() {
 
   const deleteItems = (id) => {
     dispatch(removeFromCart(id));
+  };
+
+  const handleRemoveCart = () => {
+    dispatch(clearCart());
   };
 
   return (
@@ -49,7 +56,7 @@ function Cart() {
             );
           })}
           <div className="cart-btns">
-            <button>Return To Shop</button>
+            <button onClick={handleRemoveCart}>Return To Shop</button>
             <button>Update Cart</button>
           </div>
           <div className="cart-total_box">

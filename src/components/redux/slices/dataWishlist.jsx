@@ -15,9 +15,13 @@ const wishlistSlice = createSlice({
       if (!state.wishlistItems.find((item) => item.id === newItem.id)) {
         state.wishlistItems.push(newItem);
         localStorage.setItem("like", JSON.stringify(state.wishlistItems));
-        toast.success("A product has been added to wishlist");
+        toast.success("A product has been added to wishlist", {
+          autoClose: 2400,
+        });
       } else {
-        toast.info("This product has already been added");
+        toast.info("This product has already been added", {
+          autoClose: 2400,
+        });
       }
     },
     removeFromWishlist: (state, action) => {

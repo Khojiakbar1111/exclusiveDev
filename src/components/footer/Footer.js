@@ -32,7 +32,7 @@ const Footer = () => {
         <h1>Account</h1>
         <ul>
           <li>
-            <Link to="/myaccount">My Account</Link>
+            <Link to="/myprofile">My Account</Link>
           </li>
           <li>
             <Link to="/login">Login / Register</Link>
