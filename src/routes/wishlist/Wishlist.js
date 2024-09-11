@@ -8,6 +8,7 @@ import "./wishlist.css";
 import { BsTrash } from "react-icons/bs";
 import { addToCart } from "../../components/redux/slices/dataCart";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 function Wishlist() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function Wishlist() {
         </div>
       ) : (
         <div className="wishlist">
+          <ToastContainer />
           <div className="title">
             <h1>Wishlist ({wishlistItems.length})</h1>
             <button onClick={() => handleRemoveWishlist()}>

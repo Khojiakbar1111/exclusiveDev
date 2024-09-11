@@ -31,7 +31,7 @@ const FlashSales = () => {
   };
 
   const isItemInWishlist = (itemId) => {
-    return wishlistItems.some((item) => item.id === itemId); // Check if item is in wishlist
+    return wishlistItems.some((item) => item.id === itemId);
   };
 
   const targetDate = new Date("2024-10-31T10:00:00");

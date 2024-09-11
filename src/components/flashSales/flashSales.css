@@ -1,6 +1,5 @@
 .flashSales {
   margin: 140px 135px 0;
-  overflow: hidden;
   border-bottom: 1px solid #afafaf;
 }
 
@@ -90,6 +89,7 @@
 }
 
 .flashSales-section {
+  width: 100%;
   display: flex;
   gap: 30px;
   margin-top: 40px;
@@ -154,8 +154,8 @@
 }
 
 .flash-btns button:hover {
-  background: #db4444;
-  color: white;
+  background: #fff !important;
+  color: #000 !important;
 }
 
 .flashSales-overlay .addToCart {
@@ -214,11 +214,11 @@
 }
 
 .red-heart {
-  color: white; /* Change heart color when item is liked */
+  color: #db4444; /* Change heart color when item is liked */
 }
 
 .flash-like.liked {
-  background-color: #db4444; /* Optional: Change background when liked */
+  background-color: #ffff; /* Optional: Change background when liked */
 }
 
 body.dark .time-content .time span {
@@ -227,14 +227,4 @@ body.dark .time-content .time span {
 
 body.dark .flash-btns i {
   color: black;
-}
-
-body.dark .category-cart {
-  background-color: white;
-  color: black;
-}
-
-body.dark .category-cart:hover {
-  background-color: #db4444;
-  color: white;
 }

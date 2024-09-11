@@ -5,10 +5,13 @@ import "./ourProducts.css";
 import FetchError from "../fetchError/FetchError";
 import { BeatLoader } from "react-spinners";
 import { addToCart } from "../redux/slices/dataCart";
+import { toggleWishlist } from "../redux/slices/dataWishlist";
 
 const OurProducts = () => {
   const dispatch = useDispatch();
   const { dataJson, isLoading, isError } = useSelector((state) => state.data);
+
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
 
   useEffect(() => {
     dispatch(fetchData());
@@ -16,6 +19,14 @@ const OurProducts = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
+  };
+
+  const handleToggleWishlist = (item) => {
+    dispatch(toggleWishlist(item));
+  };
+
+  const isItemInWishlist = (itemId) => {
+    return wishlistItems.some((item) => item.id === itemId);
   };
 
   if (isLoading) {
@@ -50,8 +61,19 @@ const OurProducts = () => {
                 <div className="flashSales-overlay">
                   <div className="flashSales-icons">
                     <div className="flash-btns">
-                      <button className="flash-like">
-                        <i className="fa-regular fa-heart"></i>
+                      <button
+                        className={`flash-like ${
+                          isItemInWishlist(product.id) ? "liked" : ""
+                        }`}
+                        onClick={() => handleToggleWishlist(product)}
+                      >
+                        <i
+                          className={`fa-heart ${
+                            isItemInWishlist(product.id)
+                              ? "fa-solid fa-heart red-heart"
+                              : "fa-regular fa-heart"
+                          }`}
+                        ></i>
                       </button>
                       <button className="flash-detail">
                         <i className="fa-regular fa-eye"></i>

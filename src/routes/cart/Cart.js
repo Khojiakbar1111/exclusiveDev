@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   clearCart,
   removeFromCart,
+  updateCartItemQuantity,
 } from "../../components/redux/slices/dataCart";
 
 function Cart() {
@@ -17,6 +18,14 @@ function Cart() {
 
   const handleRemoveCart = () => {
     dispatch(clearCart());
+  };
+
+  const increment = (id) => {
+    dispatch(updateCartItemQuantity({ id, quantity: 1 }));
+  };
+
+  const decrement = (id) => {
+    dispatch(updateCartItemQuantity({ id, quantity: -1 }));
   };
 
   return (
@@ -49,17 +58,17 @@ function Cart() {
                 </div>
                 <p>${item.price}</p>
                 <div className="cart-plus_minus">
-                  <span>1</span>
+                  <span>{item.quantity}</span>
                   <div className="cart-btns_btn">
-                    <button>
+                    <button onClick={() => increment(item.id)}>
                       <FaSortUp />
                     </button>
-                    <button>
+                    <button onClick={() => decrement(item.id)}>
                       <FaSortDown />
                     </button>
                   </div>
                 </div>
-                <p>${item.price}</p>
+                <p>${(item.price * item.quantity).toFixed(2)}</p>
               </div>
             );
           })}
@@ -76,7 +85,15 @@ function Cart() {
               <h1>Cart Total</h1>
               <div className="cart-total_sub">
                 <p>Subtotal:</p>
-                <p>$1750</p>
+                <p>
+                  $
+                  {cartItems
+                    .reduce(
+                      (total, item) => total + item.price * item.quantity,
+                      0
+                    )
+                    .toFixed(2)}
+                </p>
               </div>
               <div className="cart-total_sub">
                 <p>Shipping:</p>
@@ -84,9 +101,17 @@ function Cart() {
               </div>
               <div className="cart-totaly_sub">
                 <p>Total: </p>
-                <p>$1750</p>
+                <p>
+                  $
+                  {cartItems
+                    .reduce(
+                      (total, item) => total + item.price * item.quantity,
+                      0
+                    )
+                    .toFixed(2)}
+                </p>
               </div>
-              <button>Procees to checkout</button>
+              <button>Proceed to checkout</button>
             </div>
           </div>
         </div>

@@ -12,16 +12,15 @@ const dataCartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const newItem = action.payload;
-      if (!state.cartItems.find((item) => item.id === newItem.id)) {
-        state.cartItems.push(newItem);
+      const existingItem = state.cartItems.find(
+        (item) => item.id === newItem.id
+      );
+      if (!existingItem) {
+        state.cartItems.push({ ...newItem, quantity: 1 }); // Initialize with quantity 1
         localStorage.setItem("cart", JSON.stringify(state.cartItems));
-        toast.success("A product has been added to cart", {
-          autoClose: 2400,
-        });
+        toast.success("A product has been added to cart", { autoClose: 2400 });
       } else {
-        toast.info("This product had already been added ", {
-          autoClose: 2400,
-        });
+        toast.info("This product has already been added", { autoClose: 2400 });
       }
     },
     removeFromCart: (state, action) => {
@@ -33,9 +32,18 @@ const dataCartSlice = createSlice({
       state.cartItems = [];
       localStorage.removeItem("cart");
     },
+    updateCartItemQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const item = state.cartItems.find((item) => item.id === id);
+      if (item) {
+        item.quantity = Math.max(1, item.quantity + quantity); // Ensure quantity doesn't go below 1
+        localStorage.setItem("cart", JSON.stringify(state.cartItems));
+      }
+    },
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } = dataCartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, updateCartItemQuantity } =
+  dataCartSlice.actions;
 
 export default dataCartSlice.reducer;
